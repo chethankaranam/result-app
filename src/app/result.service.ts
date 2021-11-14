@@ -11,7 +11,9 @@ export class ResultService {
   async getScoresById(roll: string) {
     return new Promise((resolve, reject) => {
       this.http
-        .get('https://results-angular.herokuapp.com/results/' + roll)
+        .get(
+          'https://results-angular.herokuapp.com/results/' + roll.toUpperCase()
+        )
         .subscribe(
           (data) => {
             resolve(data);
