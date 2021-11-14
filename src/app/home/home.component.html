@@ -1,0 +1,94 @@
+<section *ngIf="!showResults; else resultBlock">
+  <mat-card class="showUserForm">
+    <mat-card-title
+      >Enter Your Roll Number to get semester-wise grades</mat-card-title
+    >
+    <mat-card-content class="formContent">
+      <form class="example-form" [formGroup]="form" (submit)="getResult()">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Roll Number</mat-label>
+          <input
+            matInput
+            placeholder="Ex. 18691A0000"
+            name="rollNumber"
+            formControlName="rollNumber"
+          />
+          <mat-icon matSuffix>person</mat-icon>
+        </mat-form-field>
+        <mat-error *ngIf="displayErrorMessage" class="errorMessage"
+          >Sorry Can't Find Your Results</mat-error
+        >
+        <div id="getResultContainer">
+          <button
+            mat-raised-button
+            class="getResultButton"
+            type="submit"
+            [disabled]="!form.valid"
+          >
+            GET RESULT
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+    <mat-card-footer>
+      <mat-progress-bar
+        mode="indeterminate"
+        *ngIf="showProgressBar"
+      ></mat-progress-bar>
+    </mat-card-footer>
+  </mat-card>
+</section>
+<ng-template #resultBlock>
+  <section class="resultSection">
+    <mat-card class="recentGradesContainer">
+      <mat-card-title>Your Recent Grades</mat-card-title>
+      <mat-card-content class="recentGrades">
+        <div>
+          <p>
+            <strong class="recentPoints">{{ recentGrades.cgpa }}</strong> /
+            10.00
+          </p>
+          <p class="recentPointsLabel">CGPA</p>
+        </div>
+        <div>
+          <p>
+            <strong class="recentPoints">{{ recentGrades.percentage }} </strong>
+            / 100.0
+          </p>
+          <p class="recentPointsLabel">Percentage</p>
+        </div>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="overAllResults">
+      <mat-card-title>Your Overall Grades</mat-card-title>
+      <mat-card-content>
+        <mat-card
+          *ngFor="let item of studentData; let i = index"
+          class="eachSemesterGrades"
+        >
+          <mat-card-title>Semester-{{ i + 1 }}</mat-card-title>
+          <mat-card-content class="semesterGrade">
+            <div>
+              <p>
+                <strong class="points">{{ item.sgpa }}</strong> / 10.00
+              </p>
+              <p class="pointsLabel">SGPA</p>
+            </div>
+            <div>
+              <p>
+                <strong class="points">{{ item.cgpa }}</strong> / 10.00
+              </p>
+              <p class="pointsLabel">CGPA</p>
+            </div>
+            <div>
+              <p>
+                <strong class="points">{{ item.percentage }}</strong> / 100.0
+              </p>
+              <p class="pointsLabel">Percentage</p>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </mat-card-content>
+    </mat-card>
+  </section>
+</ng-template>
