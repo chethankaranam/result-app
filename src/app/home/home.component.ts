@@ -33,14 +33,13 @@ export class HomeComponent implements OnInit {
     this.showProgressBar = true;
     this._resultService
       .getScoresById(this.form.controls.rollNumber.value)
-      .then((data) => {
-        this.studentData = <scores[]>data;
+      .then((data: Array<student>) => {
+        this.studentData = data[0].scores;
         this.recentGrades = this.studentData.slice(-1)[0];
         console.log(this.recentGrades, this.studentData);
         this.showResults = true;
       })
       .catch((err) => {
-        console.log(err);
         this.displayErrorMessage = true;
         this.showProgressBar = false;
       });
