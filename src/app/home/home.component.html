@@ -15,9 +15,9 @@
           />
           <mat-icon matSuffix>person</mat-icon>
         </mat-form-field>
-        <mat-error *ngIf="displayErrorMessage" class="errorMessage"
-          >Sorry Can't Find Your Results</mat-error
-        >
+        <mat-error *ngIf="displayErrorMessage" class="errorMessage">{{
+          errorMessage
+        }}</mat-error>
         <div id="getResultContainer">
           <button
             mat-raised-button

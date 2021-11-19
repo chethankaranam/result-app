@@ -8,7 +8,7 @@ import { Injectable } from '@angular/core';
 export class ResultService {
   totalSemesters: number = 5;
   constructor(private http: HttpClient) {}
-  async getScoresById(roll: string): Promise<Array<student>> {
+  async getScoresById(roll: string): Promise<student> {
     return new Promise((resolve, reject) => {
       this.http
         .get(
@@ -17,7 +17,8 @@ export class ResultService {
         )
         .subscribe(
           (data) => {
-            resolve(<Array<student>>data);
+            let score = <Array<student>>data;
+            resolve(score[0]);
           },
           (err) => {
             reject(err);
