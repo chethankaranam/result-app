@@ -1,5 +1,5 @@
 <section *ngIf="!showResults; else resultBlock">
-  <mat-card class="showUserForm">
+  <!-- <mat-card class="showUserForm">
     <mat-card-title
       >Enter Your Roll Number to get semester-wise grades</mat-card-title
     >
@@ -36,11 +36,31 @@
         *ngIf="showProgressBar"
       ></mat-progress-bar>
     </mat-card-footer>
-  </mat-card>
+  </mat-card> -->
+  <app-user-form
+    class="showUserForm"
+    [displayErrorMessage]="displayErrorMessage"
+    [errorMessage]="errorMessage"
+    (formSubmitEvent)="getResult($event)"
+  ></app-user-form>
 </section>
 <ng-template #resultBlock>
   <section class="resultSection">
-    <mat-card class="recentGradesContainer">
+    <app-grade-overview-card
+      class="recentGradesContainer"
+      [className]="recentGradesProperties.className"
+      [showTitle]="recentGradesProperties.showTitle"
+      [classNames]="recentGradesProperties.classNames"
+      [grades]="recentGrades"
+    ></app-grade-overview-card>
+    <app-grade-overview-card
+      class="overAllResults"
+      [className]="overallResultsProperties.className"
+      [showTitle]="overallResultsProperties.showTitle"
+      [classNames]="overallResultsProperties.classNames"
+      [grades]="studentData"
+    ></app-grade-overview-card>
+    <!-- <mat-card class="recentGradesContainer">
       <mat-card-title>Your Recent Grades</mat-card-title>
       <mat-card-content class="recentGrades">
         <div>
@@ -89,6 +109,6 @@
           </mat-card-content>
         </mat-card>
       </mat-card-content>
-    </mat-card>
+    </mat-card> -->
   </section>
 </ng-template>

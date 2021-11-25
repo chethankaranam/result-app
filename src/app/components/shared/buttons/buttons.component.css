@@ -1,0 +1,12 @@
+.getResultButton {
+  background-color: #15A811;
+  color: white;
+  padding: 5px 15px;
+  font-size:medium;
+}
+@media screen and (min-width:168px) and (max-width:567px) {
+  .getResultButton {
+    font-size: 14px;
+    padding:3px 10px;
+  }
+}
