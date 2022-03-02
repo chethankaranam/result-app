@@ -1,0 +1,8 @@
+<section>
+  <app-user-form
+    class="showUserForm"
+    [displayErrorMessage]="displayErrorMessage"
+    [errorMessage]="errorMessage"
+    (formSubmitEvent)="getResult($event)"
+  ></app-user-form>
+</section>

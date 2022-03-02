@@ -1,0 +1,13 @@
+<mat-card [ngClass]="className">
+  <mat-card-title>{{ titleContent }}</mat-card-title>
+  <mat-card-content [ngClass]="classNames.subClass">
+    <app-grade-card
+      *ngFor="let grade of grades; index as i"
+      [item]="grade"
+      [semNumber]="i"
+      [showTitle]="showTitle"
+      [classNames]="classNames"
+      [ngClass]="classNames.mainClass"
+    ></app-grade-card>
+  </mat-card-content>
+</mat-card>

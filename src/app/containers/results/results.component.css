@@ -1,0 +1,302 @@
+.showUserForm {
+  width: 90%;
+  display: flex;
+  flex-flow: column;
+  border-bottom: 2px #D8CE17 solid;
+}
+
+.showResultsForm {
+  width:30%;
+  margin: 20px 0px;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.errorMessage {
+  font-size: large;
+}
+.example-form {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  text-align: center;
+  width: 90%;
+
+}
+::ng-deep .mat-progress-bar-fill::after {
+  background-color: #15A811;
+}
+
+
+.showUserForm .mat-card-title {
+  display: block;
+  margin: 30px 0px 50px 0px!important;
+  text-align: center;
+  color: gray;
+  line-height: 5vh;
+}
+
+#getResultContainer {
+  margin: 35px 0px;
+  text-align: center;
+}
+
+
+mat-icon {
+  color:#15A811
+}
+
+
+.showUserForm .mat-card-content {
+  width: 90%;
+  margin: auto;
+}
+
+.recentPoints {
+  font-size: xx-large;
+  color:#15A811;
+}
+
+.recentPointsLabel {
+  font-size: large;
+  text-align: center;
+  font-weight: 400;
+}
+
+.points {
+  font-size: x-large;
+  color:#15A811;
+}
+
+.pointsLabel {
+  font-size: medium;
+  text-align: center;
+  font-weight: 400;
+}
+
+
+.formContent {
+  display: flex;
+  justify-content: center;
+}
+
+.getResultButton {
+  background-color: #15A811;
+  color: white;
+  padding: 5px 15px;
+  font-size:medium;
+}
+.recentGradesContainer {
+  width:90%;
+  margin:10px auto;
+  border-bottom: 1px #D8CE17 solid;
+}
+
+.recentGrades {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+
+.overAllResults {
+  width: 100%;
+  margin: 10px auto;
+}
+
+.overAllResults >.mat-card-content {
+  width:100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  font-size: 20px;
+}
+
+.eachSemesterGrades div {
+  margin: 7px;
+  font-size: medium;
+}
+.recentGrades div{
+  margin:7px;
+  font-size:large;
+}
+
+.semesterGrade {
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.eachSemesterGrades {
+  width: 45%;
+  margin: 10px !important;
+  border-bottom: 1px #D8CE17 solid;
+}
+
+.eachSemesterGrades mat-card-content {
+  display: flex;
+  justify-content: space-around;
+}
+
+::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+  color: #15A811;
+  font-size: large;
+  padding-bottom: 3px;
+}
+
+::ng-deep .mat-form-field.mat-focused .mat-form-field-ripple {
+  background-color:#15A811;
+}
+
+::ng-deep .mat-input-element {
+  color: #15A811;
+}
+::ng-deep input.mat-input-element {
+  margin-top: 7px;
+}
+section {
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  align-items: center;
+  height: 100vh;
+  width: 80%;
+  margin: auto;
+}
+
+.resultSection {
+  display: flex;
+  flex-flow: column;
+  width: 90%;
+  height:max-content;
+  margin: auto;
+  justify-content: flex-start;
+  padding:30px 0px;
+}
+
+.eachSemesterGrades .mat-card-title {
+  font-size: medium;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.resultSection > .mat-card > .mat-card-title,.overAllResults>mat-card-title {
+  display: block;
+  margin: 5px 0px 25px 0px !important;
+  text-align: center;
+  color: gray;
+  line-height: 5vh;
+  font-size: xx-large;
+}
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+
+@media screen and (min-width:168px) and (max-width:1199px) {
+
+.eachSemesterGrades {
+  width:100%;
+}
+
+.overAllResults {
+  width: 90%;
+}
+
+.recentGradesContainer {
+  width: 90%;
+}
+
+.errorMessage {
+  font-size: medium;
+}
+
+}
+
+@media screen and (min-width:568px) and (max-width:967px) {
+  .recentPoints {
+    font-size: x-large;
+  }
+
+  .recentPointsLabel,.pointsLabel {
+    font-size: medium;
+  }
+
+  .points {
+    font-size: large;
+  }
+
+  .resultSection > .mat-card > .mat-card-title,.overAllResults> .mat-card > .mat-card-title{
+    font-size: x-large;
+  }
+
+  .showUserForm .mat-card-title {
+    font-size: x-large;
+  }
+
+  .eachSemesterGrades .mat-card-title {
+    font-size: 15px;
+  }
+  .eachSemesterGrades div {
+    font-size: small;
+  }
+  .recentGrades div{
+    font-size:medium;
+  }
+
+
+  ::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+    font-size: medium;
+  }
+
+}
+@media screen and (min-width:168px) and (max-width:567px) {
+
+  .recentPoints {
+    font-size: large;
+  }
+  .points {
+    font-size: medium;
+  }
+
+  .recentPointsLabel , .pointsLabel {
+    font-size: small;
+  }
+
+  .resultSection > .mat-card > .mat-card-title,.overAllResults> .mat-card > .mat-card-title{
+    font-size: large;
+  }
+
+
+  .eachSemesterGrades .mat-card-title {
+    font-size: small;
+  }
+
+  .eachSemesterGrades div {
+    font-size: small;
+  }
+  .recentGrades div{
+    font-size:small;
+  }
+
+  .getResultButton {
+    font-size: 14px;
+    padding:3px 10px;
+  }
+
+  ::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+    font-size: medium;
+  }
+
+  .showUserForm .mat-card-title {
+    font-size: medium;
+  }
+
+
+}

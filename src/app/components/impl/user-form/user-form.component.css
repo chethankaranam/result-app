@@ -1,8 +1,3 @@
-.showUserForm {
-  width: 90%;
-  display: flex;
-  flex-flow: column;
-}
 
 .showResultsForm {
   width:30%;
@@ -27,7 +22,7 @@
 }
 
 
-.showUserForm .mat-card-title {
+.heading {
   display: block;
   margin: 30px 0px 50px 0px!important;
   text-align: center;
@@ -46,10 +41,7 @@ mat-icon {
 }
 
 
-.showUserForm .mat-card-content {
-  width: 90%;
-  margin: auto;
-}
+
 
 .recentPoints {
   font-size: xx-large;
@@ -77,6 +69,8 @@ mat-icon {
 .formContent {
   display: flex;
   justify-content: center;
+  width: 90%;
+  margin: auto;
 }
 
 .getResultButton {
@@ -87,7 +81,8 @@ mat-icon {
 }
 .recentGradesContainer {
   width:100%;
-  margin:auto;
+  margin:10px auto;
+  border-bottom: 1px #D8CE17 solid;
 }
 
 .recentGrades {
@@ -99,7 +94,7 @@ mat-icon {
 
 .overAllResults {
   width: 100%;
-  margin: auto;
+  margin: 10px auto;
 }
 
 .overAllResults >.mat-card-content {
@@ -128,6 +123,7 @@ mat-icon {
 .eachSemesterGrades {
   width: 45%;
   margin: 10px !important;
+  border-bottom: 1px #D8CE17 solid;
 }
 
 .eachSemesterGrades mat-card-content {
@@ -233,7 +229,7 @@ section {
     font-size: x-large;
   }
 
-  .showUserForm .mat-card-title {
+  .heading {
     font-size: x-large;
   }
 
@@ -291,7 +287,7 @@ section {
     font-size: medium;
   }
 
-  .showUserForm .mat-card-title {
+  .heading {
     font-size: medium;
   }
 

@@ -1,0 +1,32 @@
+<mat-card>
+  <mat-card-title class="heading"
+    >Enter Your Roll Number to get semester-wise grades</mat-card-title
+  >
+  <mat-card-content class="formContent">
+    <form class="example-form" [formGroup]="form">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Roll Number</mat-label>
+        <input
+          matInput
+          placeholder="Ex. 18691A0000"
+          name="rollNumber"
+          formControlName="rollNumber"
+        />
+        <mat-icon matSuffix>person</mat-icon>
+      </mat-form-field>
+      <mat-error *ngIf="displayErrorMessage" class="errorMessage">{{
+        errorMessage
+      }}</mat-error>
+      <div id="getResultContainer">
+        <app-buttons
+          (onClick)="formOnSubmit()"
+          [disabled]="!form.valid"
+          [buttonText]="buttonText"
+        ></app-buttons>
+      </div>
+    </form>
+  </mat-card-content>
+  <mat-card-footer *ngIf="showProgressBar">
+    <app-progress-bar></app-progress-bar>
+  </mat-card-footer>
+</mat-card>
