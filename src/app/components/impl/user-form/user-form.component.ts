@@ -14,6 +14,7 @@ export class UserFormComponent implements OnInit {
   showProgressBar: boolean = false;
 
   form!: FormGroup;
+  buttonText: string = 'GET RESULT';
 
   constructor(private _formBuilder: FormBuilder) {}
 

@@ -11,7 +11,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class HomeComponent implements OnInit {
   rollNumber: string = '';
-  @Output() studentData: Array<scores> = [];
+  @Output() studentData: Array<scores> = this._resultService.studentData;
   showResults: boolean = false;
   recentGrades: any;
   @Output() displayErrorMessage: boolean = false;
@@ -42,23 +42,29 @@ export class HomeComponent implements OnInit {
       pointsLabelClass: 'pointsLabel',
     },
   };
-  constructor(private _resultService: ResultService) {}
+  constructor(private _resultService: ResultService, private _route: Router) {}
 
   ngOnInit() {}
   getResult(roll: string) {
     this.displayErrorMessage = false;
+    console.log(roll);
     if (roll.length > 10 || roll.length < 10) {
       this.errorMessage = 'Invalid Roll Number';
       this.displayErrorMessage = true;
       return;
     }
     this._resultService
-      .getScoresById(roll)
-      .then((data: student) => {
-        this.studentData = data.scores;
-        this.recentGrades = this.studentData.slice(-1)[0];
-        console.log(this.recentGrades, this.studentData);
-        this.showResults = true;
+      .getScoresById(roll.toUpperCase())
+      .then((data: boolean) => {
+        //this.studentData = data.scores;
+        //this.recentGrades = this.studentData.slice(-1)[0];
+        if (!data) {
+          this.errorMessage = "Sorry Can't Find Your Results";
+          this.displayErrorMessage = true;
+        } else {
+          console.log(data);
+          this._route.navigate(['/result']);
+        }
       })
       .catch((err) => {
         this.errorMessage = "Sorry Can't Find Your Results";

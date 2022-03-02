@@ -87,7 +87,7 @@ mat-icon {
   font-size:medium;
 }
 .recentGradesContainer {
-  width:100%;
+  width:90%;
   margin:10px auto;
   border-bottom: 1px #D8CE17 solid;
 }
@@ -119,13 +119,6 @@ mat-icon {
 .recentGrades div{
   margin:7px;
   font-size:large;
-}
-.overAllGrades {
-  width:100%;
-  display: flex;
-  flex-wrap: wrap;
-  font-size: 20px;
-  justify-content: space-around;
 }
 
 .semesterGrade {
@@ -187,7 +180,7 @@ section {
   font-weight: 500;
 }
 
-.resultSection > .mat-card > .mat-card-title,.overAllResults >.mat-card-title {
+.resultSection > .mat-card > .mat-card-title,.overAllResults>mat-card-title {
   display: block;
   margin: 5px 0px 25px 0px !important;
   text-align: center;
@@ -239,7 +232,7 @@ section {
     font-size: large;
   }
 
-  .resultSection > .mat-card > .mat-card-title,.overAllResults> .mat-card-title{
+  .resultSection > .mat-card > .mat-card-title,.overAllResults> .mat-card > .mat-card-title{
     font-size: x-large;
   }
 
@@ -276,7 +269,7 @@ section {
     font-size: small;
   }
 
-  .resultSection > .mat-card > .mat-card-title,.overAllResults> .mat-card-title{
+  .resultSection > .mat-card > .mat-card-title,.overAllResults> .mat-card > .mat-card-title{
     font-size: large;
   }
 
