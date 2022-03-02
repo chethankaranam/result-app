@@ -10,6 +10,7 @@ export class GradeOverviewCardComponent implements OnInit {
   @Input() className!: string;
   @Input() showTitle!: boolean;
   @Input() classNames!: any;
+  @Input() titleContent: any;
 
   constructor() {}
 

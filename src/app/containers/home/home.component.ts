@@ -13,25 +13,33 @@ export class HomeComponent implements OnInit {
   rollNumber: string = '';
   @Output() studentData: Array<scores> = [];
   showResults: boolean = false;
-  @Output() recentGrades: any;
+  recentGrades: any;
   @Output() displayErrorMessage: boolean = false;
   @Output() errorMessage: string = '';
 
   @Output() recentGradesProperties: any = {
     className: 'recentGradesContainer',
     showTitle: false,
+    titleContent: 'Your Recent Grades',
     classNames: {
       mainClass: 'recentGradesContainer',
       subClass: 'recentGrades',
+      matCardContentClass: 'recentGrades',
+      pointsClass: 'recentPoints',
+      pointsLabelClass: 'recentPointsLabel',
     },
   };
 
   @Output() overallResultsProperties: any = {
     className: 'overallResults',
     showTitle: true,
+    titleContent: 'Your Overall Grades',
     classNames: {
       mainClass: 'eachSemesterGrades',
       subClass: 'overAllGrades',
+      matCardContentClass: 'semesterGrade',
+      pointsClass: 'points',
+      pointsLabelClass: 'pointsLabel',
     },
   };
   constructor(private _resultService: ResultService) {}
@@ -48,7 +56,7 @@ export class HomeComponent implements OnInit {
       .getScoresById(roll)
       .then((data: student) => {
         this.studentData = data.scores;
-        this.recentGrades = [this.studentData.slice(-1)[0]];
+        this.recentGrades = this.studentData.slice(-1)[0];
         console.log(this.recentGrades, this.studentData);
         this.showResults = true;
       })

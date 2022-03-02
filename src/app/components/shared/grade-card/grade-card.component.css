@@ -118,6 +118,7 @@ mat-icon {
   flex-wrap: wrap;
   align-content: space-between;
   font-size: 20px;
+  justify-content: center;
 }
 
 .eachSemesterGrades div {
@@ -182,7 +183,13 @@ section {
   padding:30px 0px;
 }
 
-.eachSemesterGrades .mat-card-title {
+.eachSemesterGrades .mat-card .mat-card-title {
+  font-size: medium;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.semesterNumberTitle {
   font-size: medium;
   margin-bottom: 20px;
   font-weight: 500;
@@ -248,7 +255,7 @@ section {
     font-size: x-large;
   }
 
-  .eachSemesterGrades .mat-card-title {
+  .semesterNumberTitle {
     font-size: 15px;
   }
   .eachSemesterGrades div {
@@ -282,7 +289,7 @@ section {
   }
 
 
-  .eachSemesterGrades .mat-card-title {
+  .semesterNumberTitle {
     font-size: small;
   }
 

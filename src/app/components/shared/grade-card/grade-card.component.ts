@@ -10,6 +10,7 @@ export class GradeCardComponent implements OnInit {
   @Input() semNumber: any;
   @Input() showTitle!: boolean;
   @Input() classNames: any;
+
   constructor() {}
 
   ngOnInit(): void {}

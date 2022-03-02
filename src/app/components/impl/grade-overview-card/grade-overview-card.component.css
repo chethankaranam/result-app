@@ -120,6 +120,13 @@ mat-icon {
   margin:7px;
   font-size:large;
 }
+.overAllGrades {
+  width:100%;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 20px;
+  justify-content: space-around;
+}
 
 .semesterGrade {
   display:flex;

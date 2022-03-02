@@ -1,25 +1,30 @@
-<mat-card [ngClass]="classNames.mainClass">
-  <mat-card-title *ngIf="showTitle"
+<mat-card>
+  <mat-card-title *ngIf="showTitle" class="semesterNumberTitle"
     >Semester-{{ semNumber + 1 }}</mat-card-title
   >
-  <mat-card-content class="classNames.subClass">
+  <mat-card-content [ngClass]="classNames.matCardContentClass">
     <div>
       <p>
-        <strong class="points">{{ item.sgpa }}</strong> / 10.00
+        <strong [ngClass]="classNames.pointsClass">{{ item.sgpa }}</strong> /
+        10.00
       </p>
-      <p class="pointsLabel">SGPA</p>
+      <p [ngClass]="classNames.pointsLabelClass">SGPA</p>
     </div>
     <div>
       <p>
-        <strong class="points">{{ item.cgpa }}</strong> / 10.00
+        <strong [ngClass]="classNames.pointsClass">{{ item.cgpa }}</strong> /
+        10.00
       </p>
-      <p class="pointsLabel">CGPA</p>
+      <p [ngClass]="classNames.pointsLabelClass">CGPA</p>
     </div>
     <div>
       <p>
-        <strong class="points">{{ item.percentage }}</strong> / 100.0
+        <strong [ngClass]="classNames.pointsClass">{{
+          item.percentage
+        }}</strong>
+        / 100.0
       </p>
-      <p class="pointsLabel">Percentage</p>
+      <p [ngClass]="classNames.pointsLabelClass">Percentage</p>
     </div>
   </mat-card-content>
 </mat-card>

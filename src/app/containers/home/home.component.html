@@ -46,21 +46,7 @@
 </section>
 <ng-template #resultBlock>
   <section class="resultSection">
-    <app-grade-overview-card
-      class="recentGradesContainer"
-      [className]="recentGradesProperties.className"
-      [showTitle]="recentGradesProperties.showTitle"
-      [classNames]="recentGradesProperties.classNames"
-      [grades]="recentGrades"
-    ></app-grade-overview-card>
-    <app-grade-overview-card
-      class="overAllResults"
-      [className]="overallResultsProperties.className"
-      [showTitle]="overallResultsProperties.showTitle"
-      [classNames]="overallResultsProperties.classNames"
-      [grades]="studentData"
-    ></app-grade-overview-card>
-    <!-- <mat-card class="recentGradesContainer">
+    <mat-card class="recentGradesContainer">
       <mat-card-title>Your Recent Grades</mat-card-title>
       <mat-card-content class="recentGrades">
         <div>
@@ -79,6 +65,16 @@
         </div>
       </mat-card-content>
     </mat-card>
+    <app-grade-overview-card
+      class="overAllResults"
+      [className]="overallResultsProperties.className"
+      [showTitle]="overallResultsProperties.showTitle"
+      [classNames]="overallResultsProperties.classNames"
+      [titleContent]="overallResultsProperties.titleContent"
+      [grades]="studentData"
+    ></app-grade-overview-card>
+
+    <!--
     <mat-card class="overAllResults">
       <mat-card-title>Your Overall Grades</mat-card-title>
       <mat-card-content>
