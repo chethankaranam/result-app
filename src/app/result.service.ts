@@ -18,8 +18,8 @@ export class ResultService {
         .subscribe(
           (data) => {
             console.log(data);
-            let score = <Array<student>>data;
-            resolve(score[0]);
+            //let score = <Array<student>>data;
+            resolve(data.scores);
           },
           (err) => {
             console.log("Error");
