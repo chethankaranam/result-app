@@ -17,10 +17,12 @@ export class ResultService {
         )
         .subscribe(
           (data) => {
+            console.log(data);
             let score = <Array<student>>data;
             resolve(score[0]);
           },
           (err) => {
+            console.log("Error");
             reject(err);
           }
         );
