@@ -17,14 +17,14 @@ export class ResultService {
     return new Promise((resolve, reject) => {
       this.http
         .get(
-          'https://results-angular.herokuapp.com/results/?rollNumber=' + roll
+          'https://results-angular.herokuapp.com/results/' + roll.toUpperCase()
         )
         .subscribe(
           (data) => {
-            let score = <Array<student>>data;
+            let score = <student>data;
             console.log(score);
-            if (score.length != 0) {
-              this.studentData = score[0].scores;
+            if (score['scores'].length != 0) {
+              this.studentData = score['scores'];
               this.recentGrades = this.studentData.slice(-1)[0];
               resolve(true);
             } else {
