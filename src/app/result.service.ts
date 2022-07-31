@@ -23,8 +23,8 @@ export class ResultService {
           (data) => {
             let score = <student>data;
             console.log(score);
-            if (score.length != 0) {
-              this.studentData = score;
+            if (score['scores'].length != 0) {
+              this.studentData = score['scores'];
               this.recentGrades = this.studentData.slice(-1)[0];
               resolve(true);
             } else {
