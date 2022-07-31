@@ -1,0 +1,31 @@
+<section class="resultSection">
+  <mat-card class="recentGradesContainer">
+    <mat-card-title>Your Recent Grades</mat-card-title>
+    <mat-card-content class="recentGrades">
+      <div>
+        <p>
+          <strong class="recentPoints">{{ recentGrades.cgpa }}</strong> / 10.00
+        </p>
+        <p class="recentPointsLabel">CGPA</p>
+      </div>
+      <div>
+        <p>
+          <strong class="recentPoints">{{ recentGrades.percentage }} </strong>
+          / 100.0
+        </p>
+        <p class="recentPointsLabel">Percentage</p>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  <app-grade-overview-card
+    class="overAllResults"
+    [className]="overallResultsProperties.className"
+    [showTitle]="overallResultsProperties.showTitle"
+    [classNames]="overallResultsProperties.classNames"
+    [titleContent]="overallResultsProperties.titleContent"
+    [grades]="studentData"
+  ></app-grade-overview-card>
+  <div id="getResultContainer">
+    <app-buttons [buttonText]="buttonText" (onClick)="toHome()"></app-buttons>
+  </div>
+</section>

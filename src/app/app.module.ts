@@ -16,9 +16,19 @@ import { GradeCardComponent } from './components/shared/grade-card/grade-card.co
 import { ProgressBarComponent } from './components/shared/progress-bar/progress-bar.component';
 import { ButtonsComponent } from './components/shared/buttons/buttons.component';
 import { GradeOverviewCardComponent } from './components/impl/grade-overview-card/grade-overview-card.component';
+import { ResultsComponent } from './containers/results/results.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, UserFormComponent, GradeCardComponent, ProgressBarComponent, ButtonsComponent, GradeOverviewCardComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    UserFormComponent,
+    GradeCardComponent,
+    ProgressBarComponent,
+    ButtonsComponent,
+    GradeOverviewCardComponent,
+    ResultsComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
